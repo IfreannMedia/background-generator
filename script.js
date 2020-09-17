@@ -1,6 +1,7 @@
 const h3 = document.getElementsByTagName("h3")[0];
 const color1 = document.querySelector(".color1");
 const color2 = document.querySelector(".color2");
+const body = document.getElementById("gradient");
 
 const eventTypesEnum = {
 	INPUT: 'input',
@@ -9,7 +10,7 @@ const eventTypesEnum = {
 	MOUSE_OUT: 'mouseout'
 };
 
-class EventListenerMain {
+class InputManager {
 	constructor(){
 
 	}
@@ -23,21 +24,22 @@ class EventListenerMain {
 			console.error(new Error('no method passed where one needed'));
 			return;
 		}
-		console.log(eventTypesEnum.INPUT);
-		console.log(eventType);
 		switch (eventType){
 			case eventTypesEnum.INPUT:
-
 			element.addEventListener(eventTypesEnum.INPUT, methodToAdd);
+			break;
 			case eventTypesEnum.CLICK:
 			element.addEventListener(eventTypesEnum.CLICK, methodToAdd);
+			break;
 			case eventTypesEnum.MOUSE_OVER:
 			element.addEventListener(eventTypesEnum.MOUSE_OVER, methodToAdd);
+			break;
 			case eventTypesEnum.MOUSE_OUT:
 			element.addEventListener(eventTypesEnum.MOUSE_OUT, methodToAdd);
+			break;
 			default: 
 			console.error(new Error('incorrect event type passed'));
-
+			break;
 		}
 	}
 
@@ -66,10 +68,15 @@ class EventListenerMain {
 	}
 }
 
-const inputManager = new EventListenerMain();
-const color1Function = function function_name(argument) {
-	// body...
-	console.log("successfully called: " + argument);
+const inputManager = new InputManager();
+const colorFunction = function function_name(argument) {
+	body.style.background = 
+	"linear-gradient(to right, " 
+	+ color1.value 
+	+ ", " 
+	+ color2.value  
+	+ ")";
+	h3.textContent = body.style.background + ";";
 }
-console.log(eventTypesEnum.INPUT);
-inputManager.addEventListener(color1, eventTypesEnum.INPUT, color1Function);
+inputManager.addEventListener(color1, eventTypesEnum.INPUT, colorFunction);
+inputManager.addEventListener(color2, eventTypesEnum.INPUT, colorFunction);
