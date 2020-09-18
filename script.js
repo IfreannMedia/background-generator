@@ -68,15 +68,47 @@ class InputManager {
 	}
 }
 
-const inputManager = new InputManager();
-const colorFunction = function function_name(argument) {
+
+const colorFunction = function setColor(col1 = color1.value, col2 = color2.value) {
+	color1.value = col1;
+	color2.value = col2;
 	body.style.background = 
 	"linear-gradient(to right, " 
-	+ color1.value 
+	+ col1
 	+ ", " 
-	+ color2.value  
+	+ col2
 	+ ")";
 	h3.textContent = body.style.background + ";";
+	setCssInSessionStorage();
 }
+
+
+function randomiseGradient(){
+	var randCol1 = getRandomHexCode();
+	var randCol2 = getRandomHexCode();
+	colorFunction(randCol1, randCol2);
+}
+
+function setInitialColors(){
+	if(!sessionStorage.getItem('col1') && !sessionStorage.getItem('col1')){
+		randomiseGradient();
+	}
+	else {
+		colorFunction(sessionStorage.getItem('col1'), sessionStorage.getItem('col2'))
+	}
+}
+
+function getRandomHexCode() {
+	return "#000000".replace(/0/g,function(){return (~~(Math.random()*16)).toString(16);});
+}
+
+function setCssInSessionStorage(){
+	sessionStorage.setItem('col1', color1.value);
+	sessionStorage.setItem('col2', color2.value);
+}
+
+const inputManager = new InputManager();
 inputManager.addEventListener(color1, eventTypesEnum.INPUT, colorFunction);
 inputManager.addEventListener(color2, eventTypesEnum.INPUT, colorFunction);
+
+setInitialColors();
