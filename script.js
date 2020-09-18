@@ -82,6 +82,10 @@ const colorFunction = function setColor(col1 = color1.value, col2 = color2.value
 	setCssInSessionStorage();
 }
 
+function setGradientFromInput(){
+	colorFunction(color1.value, color2.value);
+}
+
 
 function randomiseGradient(){
 	var randCol1 = getRandomHexCode();
@@ -108,7 +112,7 @@ function setCssInSessionStorage(){
 }
 
 const inputManager = new InputManager();
-inputManager.addEventListener(color1, eventTypesEnum.INPUT, colorFunction);
-inputManager.addEventListener(color2, eventTypesEnum.INPUT, colorFunction);
+inputManager.addEventListener(color1, eventTypesEnum.INPUT, setGradientFromInput);
+inputManager.addEventListener(color2, eventTypesEnum.INPUT, setGradientFromInput);
 
 setInitialColors();
