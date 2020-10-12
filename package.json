@@ -1,0 +1,24 @@
+{
+  "name": "background-generator",
+  "version": "1.0.0",
+  "description": "allows you to generate linear gradient backgrounds",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IfreannMedia/background-generator.git"
+  },
+  "keywords": [
+    "background",
+    "generator",
+    "gen"
+  ],
+  "author": "Ifreann",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IfreannMedia/background-generator/issues"
+  },
+  "homepage": "https://github.com/IfreannMedia/background-generator#readme"
+}
