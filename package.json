@@ -1,0 +1,25 @@
+{
+  "name": "background-generator",
+  "version": "1.0.0",
+  "description": "basic background generator",
+  "main": "bundle.js",
+  "dependencies": {
+    "browserify": "^17.0.0",
+    "lodash": "^4.17.20"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "convert": "browserify script.js > bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IfreannMedia/background-generator.git"
+  },
+  "keywords": [],
+  "author": "Warren <warrengamedev@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IfreannMedia/background-generator/issues"
+  },
+  "homepage": "https://github.com/IfreannMedia/background-generator#readme"
+}
