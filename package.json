@@ -15,8 +15,12 @@
     "type": "git",
     "url": "git+https://github.com/IfreannMedia/background-generator.git"
   },
-  "keywords": [],
-  "author": "Warren <warrengamedev@gmail.com>",
+  "keywords": [
+    "background",
+    "generator",
+    "gen"
+  ],
+  "author": "Ifreann",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/IfreannMedia/background-generator/issues"
